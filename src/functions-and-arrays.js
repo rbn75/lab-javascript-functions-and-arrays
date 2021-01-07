@@ -8,16 +8,49 @@ return result
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findLongestWord(str){
+  if(str.length>0){
+    return str.reduce((acc,cur)=>acc.length>=cur.length ? acc:acc=cur,0);
+
+  }else{
+    return null
+  }
+}
+
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumNumbers(numbers){
+if(numbers.length>0){
+  return numbers.reduce((acc, cur)=> acc + cur)
+}else
+return 0
+}
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function averageNumbers(arr){
+if(arr.length>0){
+  let sum=arr.reduce((acc, cur)=>acc+cur);
+  let avg=sum/arr.length;
+  return avg;
+}else return null
+}
+
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(arr){
+if(arr.length>0){
+  let sum=arr.reduce((acc,cur)=>acc + cur.length,0)
+  let result=sum/arr.length;
+  return result
+}else return null
+}
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -34,9 +67,23 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(arr){
+  if(arr.length>0){
+    return arr.filter((a,b,c)=>arr.indexOf(a)==b)
+}else return null
+  }
+  
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
+function doesWordExist(arr,search){
+  if(arr.length>0){
+    return arr.includes(search)
+
+  }
+else return null
+}
 // Iteration #7: Count repetition
 const wordsCount = [
   'machine',
@@ -52,6 +99,12 @@ const wordsCount = [
   'matter'
 ];
 
+function howManyTimes(arr, search){
+  return arr.filter(e=>e===search).length
+}
+// function howManyTimes( wordsArr, wordSearch ) {
+//   return wordsArr.filter( elm => elm === wordSearch).length
+// }
 // Iteration #8: Bonus
 
 const matrix = [
